@@ -833,7 +833,7 @@ class ReproductorBloom:
         # Imagen de álbum pequeña (responsiva)
         album_size = self.responsive.scale_dimension(40)
         try:
-            self.original_image_small = Image.open("emiliaMP3Foto.png")
+            self.original_image_small = Image.open(resource_path("emiliaMP3Foto.png"))
             self.resized_image_small = self.original_image_small.resize((album_size, album_size), Image.LANCZOS)
             self.album_cover_small = ImageTk.PhotoImage(self.resized_image_small)
             self.album_label_small = tk.Label(self.current_song_frame, image=self.album_cover_small, bg="white")
@@ -1021,7 +1021,7 @@ class ReproductorBloom:
         # Imagen del álbum (responsiva)
         album_display_size = self.responsive.scale_dimension(200)
         try:
-            img = Image.open("emiliaMP3Foto.png").resize((album_display_size, album_display_size), Image.LANCZOS)
+            img = Image.open(resource_path("emiliaMP3Foto.png")).resize((album_display_size), Image.LANCZOS)
             render = ImageTk.PhotoImage(img)
             label = tk.Label(self.content_frame, image=render, bg="#f0f0f0")
             label.image = render
@@ -1703,8 +1703,7 @@ if __name__ == "__main__":
         
         if respuesta:
             self.root.destroy()
-            Login()
-
+            
 # ==============================================================================
 # INICIO DE LA APLICACIÓN
 # ==============================================================================
